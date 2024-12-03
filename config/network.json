@@ -1,0 +1,14 @@
+{
+    "count": "1",
+    "config": {
+        "help": "you can specify IP address to env variable AE4_DEVICE_IP for single device connection at execution time",
+        "help_linux": "env AE4_DEVICE_IP=192.168.0.100 <your executable>",
+        "help_windows": "first you set AE4_DEVICE_IP=192.168.0.100 to system environment, then you run <your executable>",
+        "ip1": "192.168.0.100",
+        "ip2": "192.168.1.100",
+        "connection_timeout": 900,
+        "connection_timeout_help": "if exceeding this setting (seconds), we give up connecting to ip1,ip2,..., 0 means infinite trying"
+    },
+    "debug": "0",
+    "debug_help": "set to 1 to show socket connect error logs in console, default is 0 (socket error log disabled)"
+}
