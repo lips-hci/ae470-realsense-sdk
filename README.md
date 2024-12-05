@@ -1,7 +1,8 @@
 # LIPSedge™ AE470 Long-Range Industrial Stereo Camera
-Compact & Light-weight Ruggedized 3D Stereo Camera for Robotics & Edge-AI with Enhanced Range
+
 ![AE470 product_banner](AE470_WEB-BANNER.png)
 
+Compact & Light-weight Ruggedized 3D Stereo Camera for Robotics & Edge-AI with Enhanced Range
  - With less than 300 grams of weight, compact form factor.
  - GigE/PoE support and IP67 dust & water-proof.
  - Edge-AI SOC.
@@ -47,11 +48,13 @@ $ sudo make uninstall && make clean && make && sudo make install
 
 ### Camera network configuration
 Default camera IP address is 192.168.0.100. You have to modify it according to your network environment.
+<br> In your browser, type *http://192.168.0.100/* to login to camera web-admin page and modify the IP address.
 
-In your browser, type 'http://192.168.0.100/' to login to camera web-admin page and modify the IP address.
-![ae4xx web admin](lips_ae4xx_webadmin_update_ip_address.png)
+<img src="lips_ae4xx_webadmin_update_ip_address.png" alt="ae4xx web admin" height="400"/>
 
-After new IP configuration saved. Try ping the camera to make sure it is connected to your network environment, or you can use tool lips-ae400-toolkit to scan LIPSedge AE4xx cameras.
+Remember to click button "Apply and Logout" to store new setting before logout. Then try ping your camera to make sure it is connected to your network environment,
+or you can use tool **lips-ae400-toolkit** to scan any online LIPSedge AE4xx cameras (when they are already configured and connecting to your network environment).
+
 ```
 $ lips-ae400-toolkit
 Usage: ./lips-ae400-toolkit [-html: use your browser to open html]
@@ -68,7 +71,7 @@ Description = LIPSedge AE4XX/2800TN0500051/3C:FA:D3:70:09:0A
 ```
 
 ### Setup network config
-If you have installed the SDK, you can edit config file '/usr/local/bin/network.json' to specify how many camera you want to connect and their IP address.
+If you have installed the SDK, you can edit config file */usr/local/bin/network.json* to specify how many camera you want to connect and their IP address, edit values in count, ip1, or ip2.
 
 ```
 {
@@ -83,10 +86,10 @@ If you have installed the SDK, you can edit config file '/usr/local/bin/network.
 ```
 
 ### Run realsense-viewer to view depth streaming
-If you have installed the SDK, the tool 'realsense-viewer' was installed to '/usr/local/bin' so you can execute it in anywhere, or you can switch to the build folder to launch it locally.
+If you have installed the SDK, the tool **realsense-viewer** was installed to */usr/local/bin* so you can execute it in anywhere, or you can switch to the build folder to launch it locally.
 
 In the build folder, SDK library 'librealsense2.so.2.43.0' is built ready, this means you can put your tool/application/sample binary and the config 'network.json' together inside the same folder to lanuch program.
-(python wrapper library .pyd and librealsense2.so put together, you can run your python script) 
+<br>(python wrapper library .pyd and librealsense2.so put together, you can run your python script) 
 
 ```
 $ cd build
@@ -97,9 +100,8 @@ $ ./realsense-viewer
 [LIPSedge-AE430/470] Read local network config.
 
 ```
-realsense-viewer screenshot
-![AE470 realsense-viewer](screenshot_ae470_run_realsense-viewer.png)
-
+### realsense-viewer screenshot
+<img src="screenshot_ae470_run_realsense-viewer.png" alt="ae470 realsense-viewer" width="800"/>
 
 ## Device Specifications
 | Depth |                              |
@@ -132,6 +134,12 @@ realsense-viewer screenshot
 | GPU   | ARM Mali-G52 |
 -----
 
+| Others  |                     |
+| ------- | --------------------- |
+|         | Built-In Industrial Heatsink |
+| Sensor  | Built-in 6 axis IMU |
+-----
+
 | General​ |              |
 | ------- | ------------------------------- |
 |         | Dimension (mm) : 130 x 32 x 66 mm |
@@ -141,6 +149,4 @@ realsense-viewer screenshot
 | Power   | PoE (IEEE 802.3 at/at) |
 | Output Interfaces | M8 standard connector : Power wire (12V, 1A) <br> M12 connector : GigE cable for power and data |
 | Accessories      | M12-to-RJ45 Cable is included |
-| Others  | Built-In industrial heatsink |
-|         | Built-in 6 axis IMU |
 -----
